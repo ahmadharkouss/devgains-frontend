@@ -3,7 +3,7 @@ name: Deploy to Web Server
 on:
   push:
     branches:
-      - main  # Adjust if your main branch is named differently
+      - main  # Adjust if your main branch is named differently # sudo cp -r dist/ /var/www/devgains.com/angular
 
 jobs:
   deploy:
@@ -26,5 +26,4 @@ jobs:
             cd /home/ahmad/devgains-frontend
             git pull
             npm install
-            npm run build
-            sudo cp -r dist/ /var/www/devgains.com/angular
+            rsync -avz --delete dist/ ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/var/www/devgains.com/angular
