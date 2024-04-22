@@ -26,4 +26,4 @@ jobs:
             cd /home/ahmad/devgains-frontend
             git pull
             npm install
-            rsync -avz --delete dist/ ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/var/www/devgains.com/angular
+            scp -r dist/* ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/var/www/devgains.com/angular
