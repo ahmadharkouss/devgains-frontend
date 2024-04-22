@@ -27,4 +27,4 @@ jobs:
             git pull
             npm install
             npm run build
-            sudo cp -r dist/ /var/www/devgains.com/angular
+            cp -r dist/ /var/www/devgains.com/angular
