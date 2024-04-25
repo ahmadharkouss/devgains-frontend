@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@taiga-ui/core/styles/taiga-ui-local.less';
+// This goes into global, non-encapsulated styles
+[tuiWrapper][data-appearance='custom'] {
+    background: #000000;
+    color: #fff;
+
+    .wrapper-hover({
+        background: #A020F0;
+    });
+
+    .wrapper-active({
+        background: #A020F0;
+    });
+
+    .wrapper-disabled({
+        background: #eaecee;
+    });
+}
+
+[tuiWrapper][data-appearance='custom2'] {
+    background: #fff;
+    color: #000;
+
+    .wrapper-hover({
+        background: #A020F0;
+        color: #fff
+    });
+
+    .wrapper-active({
+        background: #A020F0;
+        color: #fff
+    });
+
+    .wrapper-disabled({
+        background: #eaecee;
+    });
+}
