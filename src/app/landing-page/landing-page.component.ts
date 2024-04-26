@@ -5,6 +5,10 @@ import {TuiAlertService} from '@taiga-ui/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RouterModule, RouterOutlet } from '@angular/router';
+import {tuiFadeIn} from '@taiga-ui/core';
+import anime from 'animejs';
+
+
 @Component({
   selector: 'app-landing-page',
   standalone: true,
@@ -14,6 +18,7 @@ import { RouterModule, RouterOutlet } from '@angular/router';
   styleUrl: './landing-page.component.less',
     providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}],
     encapsulation: ViewEncapsulation.None,
+    animations: [tuiFadeIn],
 })
 export class LandingPageComponent {
   constructor(
@@ -27,6 +32,24 @@ export class LandingPageComponent {
   }
      ).subscribe();
 }
+ngAfterViewInit(): void{
+
+
+
+anime.timeline({loop: false})
+.add({
+  targets: '.first-par-text',
+  scale: [4,1],
+  opacity: [0,1],
+  translateZ: 0,
+  easing: "easeOutExpo",
+  duration: 950,
+  delay: (el, i) => 70*i
+})
+
+
+}
+
 
 applyNow() : void {
    this.router.navigate(['/apply']).then(nav => {
