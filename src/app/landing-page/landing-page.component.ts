@@ -7,7 +7,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import {tuiFadeIn} from '@taiga-ui/core';
 import anime from 'animejs';
-
+import AOS from "aos";
+import scrollmagic from 'scrollmagic';
 
 @Component({
   selector: 'app-landing-page',
@@ -32,7 +33,15 @@ export class LandingPageComponent {
   }
      ).subscribe();
 }
+
+ngOnInit(): void {
+  //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+  //Add 'implements OnInit' to the class.
+  AOS.init();
+}
+
 ngAfterViewInit(): void{
+  
 
 
 

@@ -9,6 +9,8 @@
 </head>
 <body>
 
+    
+
     <div class="top-menu border-gradient border-gradient-dark-purple border-only-bottom ">
         <div class="logo">
             <img  src="../../assets/logo.png" alt="Logo">
@@ -36,33 +38,35 @@
         </div>
     </div>
 
-    <div class="second-par">
+    <div class="second-par" data-aos="fade-up" data-aos-duration="3000">
         
         <p class="second-par-header1">With</p>
 
         <div class="second-par-images">
-            <img class="img1" style="width: 400px; height: 120px;"  src="../../assets/jupyterhub-logo.png" alt="Second Par Img 1">
-            <img style="width:400px;height: 140px;" src="../../assets/RStudio_Logo.png" alt="Second Par Img 2">
+            <img data-aos="fade-right" data-aos-duration="3000" class="img1" style="width: 400px; height: 120px;"  src="../../assets/jupyterhub-logo.png" alt="Second Par Img 1">
+            <img data-aos="fade-left" data-aos-duration="3000" style="width:400px;height: 140px;" src="../../assets/RStudio_Logo.png" alt="Second Par Img 2">
         </div>
+        <div class="focus"  data-aos="zoom-in">
 
-        <p class="second-par-header2">Request Early Access</p>
+            <p class="second-par-header2">Request Early Access</p>
 
-        <div class="apply-now-button-container">
-            
-            <button (click)="applyNow()"
-         appearance="custom2"
-         tuiButton
-         size="xl"
-         type="button"
-        >
-        Apply Now
-       </button>
+            <div class="apply-now-button-container">
+                <button (click)="applyNow()"
+             appearance="custom2"
+             tuiButton
+             size="xl"
+             type="button"
+            >
+            Apply Now
+           </button>
+            </div>
         </div>
+    
         
         
     </div>
 
-    <div class="third-par">
+    <div class="third-par" data-aos="fade-up" data-aos-duration="3000">
         <div class="third-par-section1 border-gradient border-gradient-dark-purple-vertical border-only-right">
             <div style="display: flex; flex-direction: row; gap:5px; ">
                 <h1>No Hidden</h1>
@@ -105,9 +109,11 @@
     </div>
     
 
-
+    
     
 </body>
+
+
 
 </html>
 </tui-root>
