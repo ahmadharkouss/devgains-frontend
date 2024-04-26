@@ -9,6 +9,7 @@ import {tuiFadeIn} from '@taiga-ui/core';
 import anime from 'animejs';
 import AOS from "aos";
 import scrollmagic from 'scrollmagic';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
   selector: 'app-landing-page',
@@ -24,7 +25,7 @@ import scrollmagic from 'scrollmagic';
 export class LandingPageComponent {
   constructor(
     @Inject(TuiAlertService) 
-    private readonly alerts: TuiAlertService, private router: Router
+    private readonly alerts: TuiAlertService, private router: Router, private deviceService: DeviceDetectorService,
 ) {
      this.alerts.open("Hello, we are still working on the website! Expected release date on 10th of May 2024",
      {
@@ -38,6 +39,9 @@ ngOnInit(): void {
   //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
   //Add 'implements OnInit' to the class.
   AOS.init();
+  if (this.deviceService.isMobile()) {
+    this.router.navigate(['/mobile']);
+  }
 }
 
 ngAfterViewInit(): void{
