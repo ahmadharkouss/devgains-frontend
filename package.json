@@ -37,6 +37,7 @@
     "aos": "^2.3.4",
     "dompurify": "3.0.6",
     "intersection-observer": "^0.12.2",
+    "ngx-device-detector": "^7.0.0",
     "rxjs": "~7.8.0",
     "scrollmagic": "^2.0.8",
     "tslib": "^2.3.0",
