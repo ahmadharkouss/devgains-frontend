@@ -3,11 +3,11 @@ import { RouterModule, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-app',
+  selector: 'app-root',
   standalone: true,
   imports: [ RouterOutlet ,RouterModule, CommonModule],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.less'
+  templateUrl: './root.component.html',
+  styleUrl: './root.component.less'
 })
 export class AppComponent {
 
