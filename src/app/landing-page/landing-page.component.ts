@@ -26,7 +26,7 @@ export class LandingPageComponent {
     @Inject(TuiAlertService) 
     private readonly alerts: TuiAlertService, private router: Router
 ) {
-     this.alerts.open("Hello, we are still working on the website! Expected release date on 10th of May 2025",
+     this.alerts.open("Hello, we are still working on the website! Expected release date on 10th of May 2024",
      {
       status: 'warning',
       autoClose: false,
