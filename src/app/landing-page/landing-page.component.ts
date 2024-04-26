@@ -39,9 +39,7 @@ ngOnInit(): void {
   //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
   //Add 'implements OnInit' to the class.
   AOS.init();
-  if (this.deviceService.isMobile()) {
-    this.router.navigate(['/mobile']);
-  }
+
 }
 
 ngAfterViewInit(): void{
