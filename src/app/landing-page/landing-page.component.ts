@@ -100,6 +100,11 @@ applyNow() : void {
   });
 }
 
+contactNow() : void {
+  window.location.href = "mailto:support@devgains.com?subject=Contact%20DevGains&body=Hello%20DevGains%20Team%2C%0A%0A";
+
+}
+
   
 
 }
