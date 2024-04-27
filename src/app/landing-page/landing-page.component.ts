@@ -11,6 +11,14 @@ import AOS from "aos";
 import scrollmagic from 'scrollmagic';
 import { DeviceDetectorService } from 'ngx-device-detector';
 
+export interface ml4 {
+  opacityIn: number[];
+  scaleIn: number[];
+  scaleOut: number;
+  durationIn: number;
+  durationOut: number;
+  delay: number;
+}
 @Component({
   selector: 'app-landing-page',
   standalone: true,
@@ -46,10 +54,24 @@ ngOnInit(): void {
    }
 }
 
+
+
+
+ml4: ml4 = {
+  opacityIn: [0, 1],
+  scaleIn: [0.2, 1],
+  scaleOut: 3,
+  durationIn: 800,
+  durationOut: 600,
+  delay: 500
+};
+
+
+
 ngAfterViewInit(): void{
   
 
-anime.timeline({loop: false})
+anime.timeline({})
 .add({
   targets: '.first-par-text',
   scale: [4,1],
@@ -58,6 +80,12 @@ anime.timeline({loop: false})
   easing: "easeOutExpo",
   duration: 950,
   delay: (el, i) => 70*i
+}) .add({
+  targets: '.ml4 .letters',
+  opacity: this.ml4.opacityIn,
+  scale: this.ml4.scaleIn,
+  duration: this.ml4.durationIn,
+  delay: function(el, i) { return 450 * i; }
 })
 
 
