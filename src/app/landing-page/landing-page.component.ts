@@ -27,27 +27,27 @@ export class LandingPageComponent {
     @Inject(TuiAlertService) 
     private readonly alerts: TuiAlertService, private router: Router, private deviceService: DeviceDetectorService,
 ) {
-     this.alerts.open("Hello, we are still working on the website! Expected release date on 10th of May 2024",
-     {
-      status: 'warning',
-      autoClose: false,
   }
-     ).subscribe();
-}
+
+isMobile : boolean = false;
 
 ngOnInit(): void {
   //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
   //Add 'implements OnInit' to the class.
   AOS.init();
-  if (this.deviceService.isMobile()) {
-    this.router.navigate(['/mobile']);
-  }
+  this.isMobile = this.deviceService.isMobile();
+  if (!this.deviceService.isMobile()) {
+    this.alerts.open("Hello, we are still working on the website! Expected release date on 10th of May 2024",
+    {
+     status: 'warning',
+     autoClose: false,
+ }
+    ).subscribe();
+   }
 }
 
 ngAfterViewInit(): void{
   
-
-
 
 anime.timeline({loop: false})
 .add({
