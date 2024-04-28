@@ -1,2 +1,106 @@
 
-<p>apply works!</p>
+
+<mat-card class="border-gradient border-gradient-dark-purple border-only-bottom" style="display: flex; flex-direction: row; justify-content: space-between; padding: 10px; ">
+
+
+<p style="margin-top: 80px; font-size: 20px;" > <span (click)="goBack()" style="cursor: pointer; text-decoration: underline; ">Home</span> > <span style="font-weight: bold;cursor: pointer;color: rgba(160,32,240,1) ;">Apply</span></p>
+
+    <div class="logo">
+        <img  src="../../assets/logo.png" alt="Logo">
+    </div>
+</mat-card>
+
+
+<body style="  background-color: black;
+background-image: -webkit-linear-gradient(25deg, white 50%, black 50%);
+ margin-top: 20px;" >
+
+<div class="main-apply">
+
+    <mat-card style="display: flex;flex-direction: column; margin-left: 0px; margin-top: 80px; padding: 40px;">
+        <!--video-->
+        <video  controls autoplay width="720"  controls>
+            <source src="../../assets/test-video.mkv" type="video/mp4">
+            Your browser does not support HTML video.
+        </video>
+
+        <!-- 
+
+            <video  controls width="720"  controls style="">
+            <source src="../../assets/video-2.mkv" type="video/mp4">
+            Your browser does not support HTML video.
+        </video>
+        -->
+        
+        <!-- 
+                    <iframe src="../../assets/test-video.mkv" width="1440" height="900" frameborder="0" allowfullscreen></iframe>
+
+        -->
+
+
+    </mat-card>
+
+    <div>
+        <form
+        class="b-form form-apply"
+        [formGroup]="testForm"
+        style="gap: 40px;"
+    >
+        <tui-input formControlName="testValue" style="width: 400px;">
+            Email
+            <input
+                tuiTextfield
+                type="email"
+            />
+        </tui-input>
+        <tui-input formControlName="testValue" style="width: 400px;">
+            Email
+            <input
+                tuiTextfield
+                type="email"
+            />
+        </tui-input>
+        <tui-input formControlName="testValue" style="width: 400px;">
+            Email
+            <input
+                tuiTextfield
+                type="email"
+            />
+        </tui-input>
+        <tui-input formControlName="testValue" style="width: 400px;">
+            Email
+            <input
+                tuiTextfield
+                type="email"
+            />
+        </tui-input>
+        
+    </form>
+    </div>
+
+
+</div>
+
+
+</body>
+
+<div class="footer">
+    <div class="footer-section1">
+        <p>&lt;Devgains/&gt;</p>
+    </div>
+    <div class="footer-section2">
+
+        <div>
+            <p style="margin-bottom: 20px;">© 2025 &lt;Devgains/&gt; Inc.</p>
+            <p>by Harkouss Ahmad</p>
+        </div>
+    
+        <div>
+            <a href="mailto:support@devgains.com" style="color: #A020F0;">Contact Us</a>
+            <p style="margin-top: 20px;">Privacy Policy</p>
+        </div>
+        
+    </div>
+    
+    
+</div>  

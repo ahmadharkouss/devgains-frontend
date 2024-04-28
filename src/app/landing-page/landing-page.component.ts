@@ -10,6 +10,7 @@ import anime from 'animejs';
 import AOS from "aos";
 import scrollmagic from 'scrollmagic';
 import { DeviceDetectorService } from 'ngx-device-detector';
+import {MatCardModule} from '@angular/material/card';
 
 export interface ml4 {
   opacityIn: number[];
@@ -22,7 +23,7 @@ export interface ml4 {
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [TuiRootModule, TuiDialogModule, TuiAlertModule, TuiButtonModule, RouterOutlet ,RouterModule, CommonModule],
+  imports: [TuiRootModule, TuiDialogModule, TuiAlertModule, TuiButtonModule, RouterOutlet ,RouterModule, CommonModule, MatCardModule],
   templateUrl: './landing-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './landing-page.component.less',
