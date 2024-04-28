@@ -12,33 +12,48 @@
 
 
 <body style="  background-color: black;
-background-image: -webkit-linear-gradient(25deg, white 50%, black 50%);
+background-image: -webkit-linear-gradient(0deg, white 50%, black 50%);
  margin-top: 20px;" >
 
 <div class="main-apply">
 
-    <mat-card style="display: flex;flex-direction: column; margin-left: 0px; margin-top: 80px; padding: 40px;">
-        <!--video-->
+
+    <h1 class="ml4" style="display: flex; flex-direction: column;margin: 0 auto;">
+        <span class="letters letters-1">Apply Now!</span>
+        <span class="letters letters-2">For Free</span>
+        <span class="letters letters-3">And</span>
+        <span class="letters letters-4">Give Use Your Feedback!</span>
+      </h1>
+
+    <!-- 
+
+          <mat-card style="display: flex;flex-direction: column; margin-left: 0px; margin-top: 80px; padding: 40px;">
+       
         <video  controls autoplay width="720"  controls>
             <source src="../../assets/test-video.mkv" type="video/mp4">
             Your browser does not support HTML video.
         </video>
 
-        <!-- 
+        
 
             <video  controls width="720"  controls style="">
             <source src="../../assets/video-2.mkv" type="video/mp4">
             Your browser does not support HTML video.
         </video>
-        -->
+    
         
-        <!-- 
+         
                     <iframe src="../../assets/test-video.mkv" width="1440" height="900" frameborder="0" allowfullscreen></iframe>
 
-        -->
+    
 
 
     </mat-card>
+
+
+    -->
+
+
 
     <div>
         <form
@@ -46,37 +61,52 @@ background-image: -webkit-linear-gradient(25deg, white 50%, black 50%);
         [formGroup]="testForm"
         style="gap: 40px;"
     >
-        <tui-input formControlName="testValue" style="width: 400px;">
+
+    <div style="display: flex; flex-direction: row; gap: 10px;">
+
+        <tui-input  style="width: 200px;">
+            First Name
+            <input
+                tuiTextfield
+                type=""
+            />
+        </tui-input>
+        <tui-input  style="width: 200px;">
+            Last Name
+            <input
+                tuiTextfield
+                type=""
+            />
+        </tui-input>
+
+
+    </div>
+       
+        <tui-input formControlName="testValue" style="width: 410px;">
             Email
             <input
                 tuiTextfield
                 type="email"
             />
         </tui-input>
-        <tui-input formControlName="testValue" style="width: 400px;">
-            Email
+
+
+
+        <tui-input  style="width: 410px;">
+            Github UserName
             <input
                 tuiTextfield
-                type="email"
+                type=""
             />
         </tui-input>
-        <tui-input formControlName="testValue" style="width: 400px;">
-            Email
-            <input
-                tuiTextfield
-                type="email"
-            />
-        </tui-input>
-        <tui-input formControlName="testValue" style="width: 400px;">
-            Email
-            <input
-                tuiTextfield
-                type="email"
-            />
-        </tui-input>
+
+        
+       
         
     </form>
     </div>
+
+    
 
 
 </div>
