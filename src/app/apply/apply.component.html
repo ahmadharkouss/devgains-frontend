@@ -5,7 +5,7 @@
 <mat-card class="border-gradient border-gradient-dark-purple border-only-bottom" style="display: flex; flex-direction: row; justify-content: space-between; padding: 10px; ">
 
 
-<p style="margin-top: 80px; font-size: 20px;" > <span (click)="goBack()" style="cursor: pointer; text-decoration: underline; ">Home</span> > <span style="font-weight: bold;cursor: pointer;color: rgba(160,32,240,1) ;">Apply</span></p>
+<p style="margin-top: 80px; font-size: 20px;" > <span (click)="goBack()" style="cursor: pointer; font-family: Georgia, 'Times New Roman', Times, serif  ; ">Home</span> > <span style="font-weight: bold;cursor: pointer;color: rgba(160,32,240,1) ;">Apply</span></p>
 
     <div class="logo">
         <img  src="../../assets/logo.png" alt="Logo">
@@ -17,16 +17,34 @@
 background-image: -webkit-linear-gradient(0deg, white 50%, black 50%);
  margin-top: 20px;" >
 
-<div class="main-apply">
+<div class="main-apply" >
 
 
-    <h1 class="ml4" style="display: flex; flex-direction: column;">
-        <span class="letters letters-1">Apply Now!</span>
-        <span class="letters letters-2">For Free</span>
-        <span class="letters letters-3">And</span>
-        <span class="letters letters-4">Give Us</span>
-        <span class="letters letters-5">Your Feedback</span>
-      </h1>
+    <div style="display: flex;flex-direction: column; gap: 160px;margin-top: 40px;">
+
+        <div>
+
+            <h1 class="ml4" style="display: flex; flex-direction: column;">
+                <span class="letters letters-1">Apply Now!</span>
+                <span class="letters letters-2">For Free</span>
+                <span class="letters letters-3">And</span>
+                <span class="letters letters-4">Give Us</span>
+                <span class="letters letters-5">Your Feedback</span>
+              </h1>
+    
+        </div>
+    
+        <div style="margin-left: 50px; box-shadow: rgba(160, 32, 240, 0.4) 5px 5px, rgba(160, 32, 240, 0.3) 10px 10px, rgba(160, 32, 240, 0.2) 15px 15px, rgba(160, 32, 240, 0.1) 20px 20px, rgba(160, 32, 240, 0.05) 25px 25px;">
+
+            <img src="../../assets/Screenshot 2024-04-29 at 10.03.17 PM.png" alt="Apply" style="width: 860px; margin-top: 20px;">
+        </div>
+
+    </div>
+
+ 
+
+
+
 
     <!-- 
           <mat-card style="display: flex;flex-direction: column; margin-left: 0px; margin-top: 80px; padding: 40px;">
@@ -152,6 +170,7 @@ background-image: -webkit-linear-gradient(0deg, white 50%, black 50%);
         <tui-input formControlName="githubUserNameValue" 
         tuiHintContent="It will be used for logging you to the jupyterhub server using Oauth2.0."
         style="width: 410px;">
+        
             Github UserName
             <input
                 tuiTextfield

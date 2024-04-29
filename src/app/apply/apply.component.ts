@@ -21,6 +21,9 @@ import { TuiErrorModule } from '@taiga-ui/core';
 import {TUI_VALIDATION_ERRORS} from '@taiga-ui/kit';
 
 import {TuiHintModule} from '@taiga-ui/core';
+import { TuiHintDirective } from '@taiga-ui/core';
+import { PolymorpheusModule } from '@tinkoff/ng-polymorpheus';
+import {PolymorpheusComponent} from '@tinkoff/ng-polymorpheus';
 
 
 export interface ml4 {
@@ -36,7 +39,7 @@ export interface ml4 {
   standalone: true,
   imports: [TuiRootModule,TuiButtonModule,RouterOutlet, RouterModule, CommonModule, ReactiveFormsModule, TuiInputModule,  MatCardModule, TuiDropdownModule,
     TuiInputPasswordModule, TuiInputPhoneInternationalModule, TuiSortCountriesPipeModule, TuiHostedDropdownModule,
-    TuiFieldErrorPipeModule,TuiErrorModule,TuiHintModule],
+    TuiFieldErrorPipeModule,TuiErrorModule,TuiHintModule,PolymorpheusModule],
   templateUrl: './apply.component.html',
   styleUrl: './apply.component.less',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -49,6 +52,7 @@ export interface ml4 {
             pattern : 'Password must contain at least 8 characters, including UPPER/lowercase and numbers'
         },
     },
+    TuiHintDirective // Provide TuiHintDirective here,
 ],
   
 })
