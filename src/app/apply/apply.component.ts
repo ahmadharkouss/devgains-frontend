@@ -116,6 +116,18 @@ export class ApplyComponent {
       duration: this.ml4.durationOut,
       easing: "easeInExpo",
       delay: this.ml4.delay
+    }).add({
+      targets: '.ml4 .letters-5',
+      opacity: this.ml4.opacityIn,
+      scale: this.ml4.scaleIn,
+      duration: this.ml4.durationIn
+    }).add({
+      targets: '.ml4 .letters-5',
+      opacity: 0,
+      scale: this.ml4.scaleOut,
+      duration: this.ml4.durationOut,
+      easing: "easeInExpo",
+      delay: this.ml4.delay
     })
     .add({
       targets: '.ml4',
