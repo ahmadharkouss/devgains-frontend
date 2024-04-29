@@ -298,9 +298,10 @@
                 
                 <div>
         
-                    <tui-input formControlName="firstNameValue" style="width: 320px;">
+                    <tui-input  tuiTextfieldSize="m"
+                    [tuiTextfieldCleaner]="true" formControlName="firstNameValue" style="width: 320px;">
                         First Name
-                        <input
+                        <input 
                             tuiTextfield
                         />
                         <span class="tui-required"></span>
@@ -313,7 +314,8 @@
         
         
                 <div>
-                    <tui-input  formControlName="lastNameValue"  style="width: 320px;">
+                    <tui-input  tuiTextfieldSize="m"
+                    [tuiTextfieldCleaner]="true"  formControlName="lastNameValue"  style="width: 320px;">
                         Last Name
                         <input
                             tuiTextfield
@@ -334,7 +336,8 @@
                
             <div>
         
-                <tui-input formControlName="mailValue" style="width: 320px;">
+                <tui-input  tuiTextfieldSize="m"
+                [tuiTextfieldCleaner]="true" formControlName="mailValue" style="width: 320px;">
                     Email
                     <input
                         tuiTextfield
@@ -353,7 +356,8 @@
         
             <div>
         
-                <tui-input-password
+                <tui-input-password  tuiTextfieldSize="m"
+                [tuiTextfieldCleaner]="true"
                 formControlName="passwordValue"
                 style="width: 320px;"
             >
@@ -372,7 +376,8 @@
             </div>
              
              
-            <tui-input-phone-international
+            <tui-input-phone-international  tuiTextfieldSize="m"
+            [tuiTextfieldCleaner]="true"
             formControlName="phoneNumberValue"
             [countries]="(countries | tuiSortCountries | async) || []"
             [(countryIsoCode)]="countryIsoCode"
@@ -383,7 +388,8 @@
         
         
             <div>
-                <tui-input formControlName="githubUserNameValue" 
+                <tui-input formControlName="githubUserNameValue"   tuiTextfieldSize="m"
+                [tuiTextfieldCleaner]="true"
                 tuiHintContent="It will be used to log you to the jupyterhub server"
                 style="width: 320px;">
                 
@@ -405,7 +411,7 @@
                 <div class="tui-form__buttons">
                     <button
                         appearance="custom3"
-                        size="l"
+                        size="m"
                         tuiButton
                         type="submit"
                         class="tui-form__button"
@@ -416,7 +422,7 @@
                         (click)="goBack()"
                         appearance="custom5"
                         
-                        size="l"
+                        size="m"
                         tuiButton
                         type="button"
                         class="tui-form__button"

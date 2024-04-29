@@ -25,6 +25,7 @@ import { TuiHintDirective } from '@taiga-ui/core';
 import { PolymorpheusModule } from '@tinkoff/ng-polymorpheus';
 import {PolymorpheusComponent} from '@tinkoff/ng-polymorpheus';
 import { DeviceDetectorService } from 'ngx-device-detector';
+import { TuiTextfieldControllerModule }  from '@taiga-ui/core';
 
 
 export interface ml4 {
@@ -40,7 +41,7 @@ export interface ml4 {
   standalone: true,
   imports: [TuiRootModule,TuiButtonModule,RouterOutlet, RouterModule, CommonModule, ReactiveFormsModule, TuiInputModule,  MatCardModule, TuiDropdownModule,
     TuiInputPasswordModule, TuiInputPhoneInternationalModule, TuiSortCountriesPipeModule, TuiHostedDropdownModule,
-    TuiFieldErrorPipeModule,TuiErrorModule,TuiHintModule,PolymorpheusModule],
+    TuiFieldErrorPipeModule,TuiErrorModule,TuiHintModule,PolymorpheusModule, TuiTextfieldControllerModule],
   templateUrl: './apply.component.html',
   styleUrl: './apply.component.less',
   changeDetection: ChangeDetectionStrategy.OnPush,
