@@ -1,4 +1,6 @@
 
+<tui-root>
+
 
 <mat-card class="border-gradient border-gradient-dark-purple border-only-bottom" style="display: flex; flex-direction: row; justify-content: space-between; padding: 10px; ">
 
@@ -59,20 +61,21 @@ background-image: -webkit-linear-gradient(0deg, white 50%, black 50%);
     <div>
         <form
         class="b-form form-apply"
-        [formGroup]="testForm"
-        style="gap: 40px;"
+        [formGroup]="applyForm"
+        style="gap: 40px; "
     >
 
-    <div style="display: flex; flex-direction: row; gap: 10px;">
+    <div style="display: flex; flex-direction: row; gap: 10px; align-items: center; justify-content: center;">
 
-        <tui-input  style="width: 200px;">
+   
+        <tui-input formControlName="firstNameValue" style="width: 200px;">
             First Name
             <input
                 tuiTextfield
                 type=""
             />
         </tui-input>
-        <tui-input  style="width: 200px;">
+        <tui-input  formControlName="lastNameValue"  style="width: 200px;">
             Last Name
             <input
                 tuiTextfield
@@ -83,7 +86,7 @@ background-image: -webkit-linear-gradient(0deg, white 50%, black 50%);
 
     </div>
        
-        <tui-input formControlName="testValue" style="width: 410px;">
+        <tui-input formControlName="mailValue" style="width: 410px;">
             Email
             <input
                 tuiTextfield
@@ -91,9 +94,28 @@ background-image: -webkit-linear-gradient(0deg, white 50%, black 50%);
             />
         </tui-input>
 
+        <tui-input-password
+        formControlName="passwordValue"
+        style="width: 410px;"
+    >
+        Password
+        <input
+            placeholder="Make it secure!"
+            tuiTextfield
+        />
+    </tui-input-password>
 
 
-        <tui-input  style="width: 410px;">
+    <tui-input-phone-international
+    formControlName="phoneNumberValue"
+    [countries]="(countries | tuiSortCountries | async) || []"
+    [(countryIsoCode)]="countryIsoCode"
+>
+    Number
+</tui-input-phone-international>
+
+
+        <tui-input formControlName="githubUserNameValue" style="width: 410px;">
             Github UserName
             <input
                 tuiTextfield
@@ -135,3 +157,4 @@ background-image: -webkit-linear-gradient(0deg, white 50%, black 50%);
     
     
 </div>  
+</tui-root>

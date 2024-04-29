@@ -1,12 +1,20 @@
-import { Component } from '@angular/core';
+import { Component,ChangeDetectionStrategy}from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms'; // Import Validators
 import { ReactiveFormsModule } from '@angular/forms';
 import { TuiInputModule } from '@taiga-ui/kit';
+import {TuiInputPasswordModule} from '@taiga-ui/kit';
 import {MatCardModule} from '@angular/material/card';
 import anime from 'animejs';
+import { first } from 'rxjs';
+import {TuiCountryIsoCode} from '@taiga-ui/i18n'
+import {TuiInputPhoneInternationalModule} from '@taiga-ui/kit';
+import {TuiSortCountriesPipeModule} from '@taiga-ui/kit';
+import {TuiDropdownModule} from '@taiga-ui/core'
+import {TuiHostedDropdownModule} from '@taiga-ui/core';
+import {TuiRootModule} from '@taiga-ui/core';
 
 
 export interface ml4 {
@@ -20,21 +28,32 @@ export interface ml4 {
 @Component({
   selector: 'app-apply',
   standalone: true,
-  imports: [RouterOutlet, RouterModule, CommonModule, ReactiveFormsModule, TuiInputModule, MatCardModule],
+  imports: [TuiRootModule,RouterOutlet, RouterModule, CommonModule, ReactiveFormsModule, TuiInputModule,  MatCardModule, TuiDropdownModule,
+    TuiInputPasswordModule, TuiInputPhoneInternationalModule, TuiSortCountriesPipeModule, TuiHostedDropdownModule],
   templateUrl: './apply.component.html',
-  styleUrl: './apply.component.less'
+  styleUrl: './apply.component.less',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ApplyComponent {
   constructor(private router: Router) {
     
   }
 
-  readonly testForm = new FormGroup({
+  readonly applyForm = new FormGroup({
     // Add email validation to testValue FormControl
-    testValue: new FormControl('user@devgains.com', [Validators.required, Validators.email])
-    
+    mailValue: new FormControl('', [Validators.required, Validators.email]),
+    firstNameValue: new FormControl('',Validators.required),
+    lastNameValue: new FormControl('',Validators.required),
+    githubUserNameValue: new FormControl('',Validators.required),
+    passwordValue: new FormControl('', Validators.required),
+    phoneNumberValue: new FormControl('+33', Validators.required),
+  
 
   });
+
+  countries = Object.values(TuiCountryIsoCode);
+ 
+  countryIsoCode = TuiCountryIsoCode.FR;
 
   goBack():void {
     
@@ -45,7 +64,7 @@ export class ApplyComponent {
   }
 
   submitForm():void {
-    console.log(this.testForm.value);
+    console.log(this.applyForm.value);
   }
 
 
