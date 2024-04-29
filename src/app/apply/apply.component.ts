@@ -14,7 +14,13 @@ import {TuiInputPhoneInternationalModule} from '@taiga-ui/kit';
 import {TuiSortCountriesPipeModule} from '@taiga-ui/kit';
 import {TuiDropdownModule} from '@taiga-ui/core'
 import {TuiHostedDropdownModule} from '@taiga-ui/core';
-import {TuiRootModule} from '@taiga-ui/core';
+import {TuiRootModule,TuiButtonModule,TUI_SANITIZER} from '@taiga-ui/core';
+import { NgDompurifySanitizer } from "@tinkoff/ng-dompurify";
+import {TuiFieldErrorPipeModule} from '@taiga-ui/kit';
+import { TuiErrorModule } from '@taiga-ui/core';
+import {TUI_VALIDATION_ERRORS} from '@taiga-ui/kit';
+
+import {TuiHintModule} from '@taiga-ui/core';
 
 
 export interface ml4 {
@@ -28,11 +34,23 @@ export interface ml4 {
 @Component({
   selector: 'app-apply',
   standalone: true,
-  imports: [TuiRootModule,RouterOutlet, RouterModule, CommonModule, ReactiveFormsModule, TuiInputModule,  MatCardModule, TuiDropdownModule,
-    TuiInputPasswordModule, TuiInputPhoneInternationalModule, TuiSortCountriesPipeModule, TuiHostedDropdownModule],
+  imports: [TuiRootModule,TuiButtonModule,RouterOutlet, RouterModule, CommonModule, ReactiveFormsModule, TuiInputModule,  MatCardModule, TuiDropdownModule,
+    TuiInputPasswordModule, TuiInputPhoneInternationalModule, TuiSortCountriesPipeModule, TuiHostedDropdownModule,
+    TuiFieldErrorPipeModule,TuiErrorModule,TuiHintModule],
   templateUrl: './apply.component.html',
   styleUrl: './apply.component.less',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [
+    {
+        provide: TUI_VALIDATION_ERRORS,
+        useValue: {
+            required: 'Value is required!',
+            email: 'Enter a valid email!',
+            pattern : 'Password must contain at least 8 characters, including UPPER/lowercase and numbers'
+        },
+    },
+],
+  
 })
 export class ApplyComponent {
   constructor(private router: Router) {
@@ -45,8 +63,8 @@ export class ApplyComponent {
     firstNameValue: new FormControl('',Validators.required),
     lastNameValue: new FormControl('',Validators.required),
     githubUserNameValue: new FormControl('',Validators.required),
-    passwordValue: new FormControl('', Validators.required),
-    phoneNumberValue: new FormControl('+33', Validators.required),
+    passwordValue: new FormControl('',[Validators.pattern('(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}'), Validators.required] ),
+    phoneNumberValue: new FormControl('+33',),
   
 
   });

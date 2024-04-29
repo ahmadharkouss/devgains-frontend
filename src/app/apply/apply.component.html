@@ -29,7 +29,6 @@ background-image: -webkit-linear-gradient(0deg, white 50%, black 50%);
       </h1>
 
     <!-- 
-
           <mat-card style="display: flex;flex-direction: column; margin-left: 0px; margin-top: 80px; padding: 40px;">
        
         <video  controls autoplay width="720"  controls>
@@ -48,12 +47,7 @@ background-image: -webkit-linear-gradient(0deg, white 50%, black 50%);
          
                     <iframe src="../../assets/test-video.mkv" width="1440" height="900" frameborder="0" allowfullscreen></iframe>
 
-    
-
-
     </mat-card>
-
-
     -->
 
 
@@ -65,34 +59,65 @@ background-image: -webkit-linear-gradient(0deg, white 50%, black 50%);
         style="gap: 40px; "
     >
 
-    <div style="display: flex; flex-direction: row; gap: 10px; align-items: center; justify-content: center;">
+    <div style="display: flex; flex-direction: row; gap: 10px;  justify-content: center;">
 
-   
-        <tui-input formControlName="firstNameValue" style="width: 200px;">
-            First Name
-            <input
-                tuiTextfield
-                type=""
-            />
-        </tui-input>
-        <tui-input  formControlName="lastNameValue"  style="width: 200px;">
-            Last Name
-            <input
-                tuiTextfield
-                type=""
-            />
-        </tui-input>
+
+        <div>
+
+            <tui-input formControlName="firstNameValue" style="width: 200px;">
+                First Name
+                <input
+                    tuiTextfield
+                />
+                <span class="tui-required"></span>
+            </tui-input>
+            <tui-error
+                            formControlName="firstNameValue"
+                            [error]="[] | tuiFieldError | async"
+            ></tui-error>
+        </div>
+
+
+        <div>
+            <tui-input  formControlName="lastNameValue"  style="width: 200px;">
+                Last Name
+                <input
+                    tuiTextfield
+                />
+                <span class="tui-required"></span>
+            </tui-input>
+
+            <tui-error
+            formControlName="lastNameValue"
+            [error]="[] | tuiFieldError | async"
+            ></tui-error>
+
+        </div>
+
 
 
     </div>
        
+    <div>
+
         <tui-input formControlName="mailValue" style="width: 410px;">
             Email
             <input
                 tuiTextfield
                 type="email"
             />
+            <span class="tui-required"></span>
         </tui-input>
+
+        <tui-error
+        formControlName="mailValue"
+        [error]="[] | tuiFieldError | async"
+        ></tui-error>
+
+    </div>
+
+
+    <div>
 
         <tui-input-password
         formControlName="passwordValue"
@@ -103,9 +128,16 @@ background-image: -webkit-linear-gradient(0deg, white 50%, black 50%);
             placeholder="Make it secure!"
             tuiTextfield
         />
+        <span class="tui-required"></span>
     </tui-input-password>
+    <tui-error
+    formControlName="passwordValue"
+    [error]="[] | tuiFieldError | async"
+    ></tui-error>
 
-
+    </div>
+     
+     
     <tui-input-phone-international
     formControlName="phoneNumberValue"
     [countries]="(countries | tuiSortCountries | async) || []"
@@ -115,13 +147,50 @@ background-image: -webkit-linear-gradient(0deg, white 50%, black 50%);
 </tui-input-phone-international>
 
 
-        <tui-input formControlName="githubUserNameValue" style="width: 410px;">
+
+    <div>
+        <tui-input formControlName="githubUserNameValue" 
+        tuiHintContent="It will be used for logging you to the jupyterhub server using Oauth2.0."
+        style="width: 410px;">
             Github UserName
             <input
                 tuiTextfield
-                type=""
             />
+            <span class="tui-required"></span>
         </tui-input>
+        <tui-error
+        formControlName="githubUserNameValue"
+        [error]="[] | tuiFieldError | async"
+        ></tui-error>
+    </div>
+
+    
+
+
+        <div class="tui-form__buttons">
+            <button
+                appearance="custom3"
+                size="l"
+                tuiButton
+                type="submit"
+                class="tui-form__button"
+            >
+                Submit
+            </button>
+            <button
+                appearance="custom5"
+                
+                size="l"
+                tuiButton
+                type="button"
+                class="tui-form__button"
+            >
+                Cancel
+            </button>
+        </div>
+
+
+
 
         
        
