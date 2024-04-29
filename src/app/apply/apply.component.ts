@@ -24,6 +24,7 @@ import {TuiHintModule} from '@taiga-ui/core';
 import { TuiHintDirective } from '@taiga-ui/core';
 import { PolymorpheusModule } from '@tinkoff/ng-polymorpheus';
 import {PolymorpheusComponent} from '@tinkoff/ng-polymorpheus';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 
 export interface ml4 {
@@ -57,7 +58,7 @@ export interface ml4 {
   
 })
 export class ApplyComponent {
-  constructor(private router: Router) {
+  constructor(private router: Router, private deviceService: DeviceDetectorService) {
     
   }
 
@@ -72,6 +73,14 @@ export class ApplyComponent {
   
 
   });
+  isMobile : boolean = false;
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+   
+    this.isMobile = this.deviceService.isMobile();
+  }
+  
 
   countries = Object.values(TuiCountryIsoCode);
  

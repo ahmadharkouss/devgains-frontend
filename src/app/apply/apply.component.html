@@ -1,249 +1,459 @@
 
 <tui-root>
 
+    
+<ng-container *ngIf="!isMobile">
+
+
 
 <mat-card class="border-gradient border-gradient-dark-purple border-only-bottom" style="display: flex; flex-direction: row; justify-content: space-between; padding: 10px; ">
 
 
-<p style="margin-top: 80px; font-size: 20px;" > <span (click)="goBack()" style="cursor: pointer; font-family: Georgia, 'Times New Roman', Times, serif  ; ">Home</span> > <span style="font-weight: bold;cursor: pointer;color: rgba(160,32,240,1) ;">Apply</span></p>
-
-    <div class="logo">
-        <img  src="../../assets/logo.png" alt="Logo">
-    </div>
-</mat-card>
-
-
-<body style="  background-color: black;
-background-image: -webkit-linear-gradient(0deg, white 50%, black 50%);
- margin-top: 20px;" >
-
-<div class="main-apply" >
-
-
-    <div style="display: flex;flex-direction: column; gap: 160px;margin-top: 40px;">
-
-        <div>
-
-            <h1 class="ml4" style="display: flex; flex-direction: column;">
-                <span class="letters letters-1">Apply Now!</span>
-                <span class="letters letters-2">For Free</span>
-                <span class="letters letters-3">And</span>
-                <span class="letters letters-4">Give Us</span>
-                <span class="letters letters-5">Your Feedback</span>
-              </h1>
+    <p style="margin-top: 80px; font-size: 20px;" > <span (click)="goBack()" style="cursor: pointer; font-family: Georgia, 'Times New Roman', Times, serif  ; ">Home</span> > <span style="font-weight: bold;cursor: pointer;color: rgba(160,32,240,1) ;">Apply</span></p>
     
+        <div class="logo">
+            <img  src="../../assets/logo.png" alt="Logo">
         </div>
-    
-        <div style="margin-left: 50px; box-shadow: rgba(160, 32, 240, 0.4) 5px 5px, rgba(160, 32, 240, 0.3) 10px 10px, rgba(160, 32, 240, 0.2) 15px 15px, rgba(160, 32, 240, 0.1) 20px 20px, rgba(160, 32, 240, 0.05) 25px 25px;">
-
-            <img src="../../assets/Screenshot 2024-04-29 at 10.03.17 PM.png" alt="Apply" style="width: 860px; margin-top: 20px;">
-        </div>
-
-    </div>
-
- 
-
-
-
-
-    <!-- 
-          <mat-card style="display: flex;flex-direction: column; margin-left: 0px; margin-top: 80px; padding: 40px;">
-       
-        <video  controls autoplay width="720"  controls>
-            <source src="../../assets/test-video.mkv" type="video/mp4">
-            Your browser does not support HTML video.
-        </video>
-
-        
-
-            <video  controls width="720"  controls style="">
-            <source src="../../assets/video-2.mkv" type="video/mp4">
-            Your browser does not support HTML video.
-        </video>
-    
-        
-         
-                    <iframe src="../../assets/test-video.mkv" width="1440" height="900" frameborder="0" allowfullscreen></iframe>
-
     </mat-card>
-    -->
-
-
-
-    <div>
-        <form
-        class="b-form form-apply"
-        [formGroup]="applyForm"
-        style="gap: 40px; "
-    >
-
-    <div style="display: flex; flex-direction: row; gap: 10px;  justify-content: center;">
-
-
-        <div>
-
-            <tui-input formControlName="firstNameValue" style="width: 200px;">
-                First Name
-                <input
-                    tuiTextfield
-                />
-                <span class="tui-required"></span>
-            </tui-input>
-            <tui-error
-                            formControlName="firstNameValue"
-                            [error]="[] | tuiFieldError | async"
-            ></tui-error>
+    
+    
+    <body style="  background-color: black;
+    background-image: -webkit-linear-gradient(0deg, white 50%, black 50%);
+     margin-top: 20px;" >
+    
+    <div class="main-apply" >
+    
+    
+        <div style="display: flex;flex-direction: column; gap: 160px;margin-top: 40px;">
+    
+            <div>
+    
+                <h1 class="ml4" style="display: flex; flex-direction: column;">
+                    <span class="letters letters-1">Apply Now!</span>
+                    <span class="letters letters-2">For Free</span>
+                    <span class="letters letters-3">And</span>
+                    <span class="letters letters-4">Give Us</span>
+                    <span class="letters letters-5">Your Feedback</span>
+                  </h1>
+        
+            </div>
+        
+            <div style="margin-left: 50px; box-shadow: rgba(160, 32, 240, 0.4) 5px 5px, rgba(160, 32, 240, 0.3) 10px 10px, rgba(160, 32, 240, 0.2) 15px 15px, rgba(160, 32, 240, 0.1) 20px 20px, rgba(160, 32, 240, 0.05) 25px 25px;">
+    
+                <img src="../../assets/Screenshot 2024-04-29 at 10.03.17 PM.png" alt="Apply" style="width: 860px; margin-top: 20px;">
+            </div>
+    
         </div>
-
-
+    
+     
+    
+    
+    
+    
+        <!-- 
+              <mat-card style="display: flex;flex-direction: column; margin-left: 0px; margin-top: 80px; padding: 40px;">
+           
+            <video  controls autoplay width="720"  controls>
+                <source src="../../assets/test-video.mkv" type="video/mp4">
+                Your browser does not support HTML video.
+            </video>
+    
+            
+    
+                <video  controls width="720"  controls style="">
+                <source src="../../assets/video-2.mkv" type="video/mp4">
+                Your browser does not support HTML video.
+            </video>
+        
+            
+             
+                        <iframe src="../../assets/test-video.mkv" width="1440" height="900" frameborder="0" allowfullscreen></iframe>
+    
+        </mat-card>
+        -->
+    
+    
+    
         <div>
-            <tui-input  formControlName="lastNameValue"  style="width: 200px;">
-                Last Name
+            <form
+            class="b-form form-apply"
+            [formGroup]="applyForm"
+            style="gap: 40px; "
+        >
+    
+        <div style="display: flex; flex-direction: row; gap: 10px;  justify-content: center;">
+    
+    
+            <div>
+    
+                <tui-input formControlName="firstNameValue" style="width: 200px;">
+                    First Name
+                    <input
+                        tuiTextfield
+                    />
+                    <span class="tui-required"></span>
+                </tui-input>
+                <tui-error
+                                formControlName="firstNameValue"
+                                [error]="[] | tuiFieldError | async"
+                ></tui-error>
+            </div>
+    
+    
+            <div>
+                <tui-input  formControlName="lastNameValue"  style="width: 200px;">
+                    Last Name
+                    <input
+                        tuiTextfield
+                    />
+                    <span class="tui-required"></span>
+                </tui-input>
+    
+                <tui-error
+                formControlName="lastNameValue"
+                [error]="[] | tuiFieldError | async"
+                ></tui-error>
+    
+            </div>
+    
+    
+    
+        </div>
+           
+        <div>
+    
+            <tui-input formControlName="mailValue" style="width: 410px;">
+                Email
                 <input
                     tuiTextfield
+                    type="email"
                 />
                 <span class="tui-required"></span>
             </tui-input>
-
+    
             <tui-error
-            formControlName="lastNameValue"
+            formControlName="mailValue"
             [error]="[] | tuiFieldError | async"
             ></tui-error>
-
+    
         </div>
-
-
-
-    </div>
-       
-    <div>
-
-        <tui-input formControlName="mailValue" style="width: 410px;">
-            Email
+    
+    
+        <div>
+    
+            <tui-input-password
+            formControlName="passwordValue"
+            style="width: 410px;"
+        >
+            Password
             <input
+                placeholder="Make it secure!"
                 tuiTextfield
-                type="email"
             />
             <span class="tui-required"></span>
-        </tui-input>
-
+        </tui-input-password>
         <tui-error
-        formControlName="mailValue"
-        [error]="[] | tuiFieldError | async"
-        ></tui-error>
-
-    </div>
-
-
-    <div>
-
-        <tui-input-password
         formControlName="passwordValue"
-        style="width: 410px;"
-    >
-        Password
-        <input
-            placeholder="Make it secure!"
-            tuiTextfield
-        />
-        <span class="tui-required"></span>
-    </tui-input-password>
-    <tui-error
-    formControlName="passwordValue"
-    [error]="[] | tuiFieldError | async"
-    ></tui-error>
-
-    </div>
-     
-     
-    <tui-input-phone-international
-    formControlName="phoneNumberValue"
-    [countries]="(countries | tuiSortCountries | async) || []"
-    [(countryIsoCode)]="countryIsoCode"
->
-    Number
-</tui-input-phone-international>
-
-
-
-    <div>
-        <tui-input formControlName="githubUserNameValue" 
-        tuiHintContent="It will be used to log you to the jupyterhub server"
-        style="width: 410px;">
-        
-            Github UserName
-            <input
-                tuiTextfield
-            />
-            <span class="tui-required"></span>
-        </tui-input>
-        <tui-error
-        formControlName="githubUserNameValue"
         [error]="[] | tuiFieldError | async"
         ></tui-error>
+    
+        </div>
+         
+         
+        <tui-input-phone-international
+        formControlName="phoneNumberValue"
+        [countries]="(countries | tuiSortCountries | async) || []"
+        [(countryIsoCode)]="countryIsoCode"
+    >
+        Number
+    </tui-input-phone-international>
+    
+    
+    
+        <div>
+            <tui-input formControlName="githubUserNameValue" 
+            tuiHintContent="It will be used to log you to the jupyterhub server"
+            style="width: 410px;">
+            
+                Github UserName
+                <input
+                    tuiTextfield
+                />
+                <span class="tui-required"></span>
+            </tui-input>
+            <tui-error
+            formControlName="githubUserNameValue"
+            [error]="[] | tuiFieldError | async"
+            ></tui-error>
+        </div>
+    
+        
+    
+    
+            <div class="tui-form__buttons">
+                <button
+                    appearance="custom3"
+                    size="l"
+                    tuiButton
+                    type="submit"
+                    class="tui-form__button"
+                >
+                    Submit
+                </button>
+                <button
+                    (click)="goBack()"
+                    appearance="custom5"
+                    
+                    size="l"
+                    tuiButton
+                    type="button"
+                    class="tui-form__button"
+                >
+                    Cancel
+                </button>
+            </div>
+    
+    
+    
+    
+            
+           
+            
+        </form>
+        </div>
+    
+        
+    
+    
     </div>
+    
+    
+    </body>
+    
+    <div class="footer">
+        <div class="footer-section1">
+            <p>&lt;Devgains/&gt;</p>
+        </div>
+        <div class="footer-section2">
+    
+            <div>
+                <p style="margin-bottom: 20px;">© 2025 &lt;Devgains/&gt; Inc.</p>
+                <p>by Harkouss Ahmad</p>
+            </div>
+        
+            <div>
+                <a href="mailto:support@devgains.com" style="color: #A020F0;">Contact Us</a>
+                <p style="margin-top: 20px;">Privacy Policy</p>
+            </div>
+            
+        </div>
+        
+        
+    </div>  
+
+
+</ng-container>
+
+<ng-container *ngIf="isMobile">
+
+
+
+    <ng-container *ngIf="isMobile" style="background-color: black;" >
+
+
+        <div class="top-menu-mobile border-gradient-mobile border-gradient-dark-purple-mobile border-only-bottom-mobile ">
+            <div class="logo-mobile">
+                <img  src="../../assets/logo.png" alt="Logo">
+            </div>
+    
+           <span style="cursor: pointer;"  class="material-symbols-outlined">
+            menu
+            </span>
+        </div>
+
+
 
     
 
 
-        <div class="tui-form__buttons">
-            <button
-                appearance="custom3"
-                size="l"
-                tuiButton
-                type="submit"
-                class="tui-form__button"
+
+
+        <body style="background-color: black;
+         margin-top: 2px;" >
+        
+        <div class="main-apply-mobile" >
+        
+        
+        
+        
+            <div>
+                <form
+                class="b-form form-apply-mobile"
+                [formGroup]="applyForm"
+                style="gap: 40px; ">
+
+
+            
+        
+            
+        
+        
+                <div>
+        
+                    <tui-input formControlName="firstNameValue" style="width: 320px;">
+                        First Name
+                        <input
+                            tuiTextfield
+                        />
+                        <span class="tui-required"></span>
+                    </tui-input>
+                    <tui-error
+                                    formControlName="firstNameValue"
+                                    [error]="[] | tuiFieldError | async"
+                    ></tui-error>
+                </div>
+        
+        
+                <div>
+                    <tui-input  formControlName="lastNameValue"  style="width: 320px;">
+                        Last Name
+                        <input
+                            tuiTextfield
+                        />
+                        <span class="tui-required"></span>
+                    </tui-input>
+        
+                    <tui-error
+                    formControlName="lastNameValue"
+                    [error]="[] | tuiFieldError | async"
+                    ></tui-error>
+        
+                </div>
+        
+        
+        
+            
+               
+            <div>
+        
+                <tui-input formControlName="mailValue" style="width: 320px;">
+                    Email
+                    <input
+                        tuiTextfield
+                        type="email"
+                    />
+                    <span class="tui-required"></span>
+                </tui-input>
+        
+                <tui-error
+                formControlName="mailValue"
+                [error]="[] | tuiFieldError | async"
+                ></tui-error>
+        
+            </div>
+        
+        
+            <div>
+        
+                <tui-input-password
+                formControlName="passwordValue"
+                style="width: 320px;"
             >
-                Submit
-            </button>
-            <button
-                (click)="goBack()"
-                appearance="custom5"
+                Password
+                <input
+                    placeholder="Make it secure!"
+                    tuiTextfield
+                />
+                <span class="tui-required"></span>
+            </tui-input-password>
+            <tui-error
+            formControlName="passwordValue"
+            [error]="[] | tuiFieldError | async"
+            ></tui-error>
+        
+            </div>
+             
+             
+            <tui-input-phone-international
+            formControlName="phoneNumberValue"
+            [countries]="(countries | tuiSortCountries | async) || []"
+            [(countryIsoCode)]="countryIsoCode"
+        >
+            Number
+        </tui-input-phone-international>
+        
+        
+        
+            <div>
+                <tui-input formControlName="githubUserNameValue" 
+                tuiHintContent="It will be used to log you to the jupyterhub server"
+                style="width: 320px;">
                 
-                size="l"
-                tuiButton
-                type="button"
-                class="tui-form__button"
-            >
-                Cancel
-            </button>
+                    Github UserName
+                    <input
+                        tuiTextfield
+                    />
+                    <span class="tui-required"></span>
+                </tui-input>
+                <tui-error
+                formControlName="githubUserNameValue"
+                [error]="[] | tuiFieldError | async"
+                ></tui-error>
+            </div>
+        
+            
+        
+        
+                <div class="tui-form__buttons">
+                    <button
+                        appearance="custom3"
+                        size="l"
+                        tuiButton
+                        type="submit"
+                        class="tui-form__button"
+                    >
+                        Submit
+                    </button>
+                    <button
+                        (click)="goBack()"
+                        appearance="custom5"
+                        
+                        size="l"
+                        tuiButton
+                        type="button"
+                        class="tui-form__button"
+                    >
+                        Cancel
+                    </button>
+                </div>
+        
+        
+        
+        
+                
+               
+                
+            </form>
+            </div>
+        
+            
+        
+        
         </div>
 
 
 
-
         
-       
         
-    </form>
-    </div>
-
-    
+        </body>
 
 
-</div>
+
+</ng-container>
+
+</ng-container>
 
 
-</body>
 
-<div class="footer">
-    <div class="footer-section1">
-        <p>&lt;Devgains/&gt;</p>
-    </div>
-    <div class="footer-section2">
 
-        <div>
-            <p style="margin-bottom: 20px;">© 2025 &lt;Devgains/&gt; Inc.</p>
-            <p>by Harkouss Ahmad</p>
-        </div>
-    
-        <div>
-            <a href="mailto:support@devgains.com" style="color: #A020F0;">Contact Us</a>
-            <p style="margin-top: 20px;">Privacy Policy</p>
-        </div>
-        
-    </div>
-    
-    
-</div>  
 </tui-root>
