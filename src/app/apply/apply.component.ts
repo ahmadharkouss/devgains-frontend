@@ -51,7 +51,7 @@ export interface ml4 {
         useValue: {
             required: 'Value is required!',
             email: 'Enter a valid email!',
-            pattern : 'Password must contain at least 8 characters, including UPPER/lowercase and numbers'
+            pattern : '-Min 8 characters*\n-UPPER/lowercase and numbers*\n-Min 1 Special character*\n-Not include Firstname-Lastname'
         },
     },
     TuiHintDirective // Provide TuiHintDirective here,
@@ -69,7 +69,7 @@ export class ApplyComponent {
     firstNameValue: new FormControl('',Validators.required),
     lastNameValue: new FormControl('',Validators.required),
     githubUserNameValue: new FormControl('',Validators.required),
-    passwordValue: new FormControl('',[Validators.pattern('(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}'), Validators.required] ),
+    passwordValue: new FormControl('',[Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+\\-=\\[\\]{};:\\\'",.<>?]).{8,}$'), Validators.required] ),
     phoneNumberValue: new FormControl('+33',),
   
 
