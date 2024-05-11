@@ -46,7 +46,7 @@ ngOnInit(): void {
   AOS.init();
   this.isMobile = this.deviceService.isMobile();
   if (!this.deviceService.isMobile()) {
-    this.alerts.open("Hello, we are still working on the website! Expected release date on 10th of May 2024",
+    this.alerts.open("Expected release date: 2nd of Jan 2025. Stay tuned!",
     {
      status: 'warning',
      autoClose: false,
