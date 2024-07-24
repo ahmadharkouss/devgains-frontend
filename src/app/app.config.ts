@@ -6,5 +6,5 @@ import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideAnimations(), provideRouter(routes), importProvidersFrom(TuiRootModule), provideAnimationsAsync()]
+  providers: [provideAnimations(), provideRouter(routes), importProvidersFrom(TuiRootModule), provideAnimationsAsync(), provideAnimationsAsync()]
 };
